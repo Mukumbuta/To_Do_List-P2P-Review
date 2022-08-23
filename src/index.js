@@ -39,6 +39,7 @@ removeBtn.forEach((btn) => {
   });
 });
 
+/* eslint-disable no-plusplus */
 const boxes = document.getElementsByClassName('entertodo').length;
 export default function statusManager(id) {
   for (let i = 1; i <= boxes; i++) {
@@ -82,7 +83,7 @@ const deleteAllChecked = document.getElementById('complete');
 deleteAllChecked.addEventListener('click', () => {
   const getTasks = getLocalStorage().localTodos;
   let incompleteTodos = getTasks.filter((task) => task.complete !== true);
-  
+
   incompleteTodos = incompleteTodos.map((task, index) => {
     const result = {
       ...task,

@@ -97,7 +97,8 @@ img:hover {
   font-weight: 600;
 }
 
-ul.active, .remove {
+ul.active,
+.remove {
   display: none;
 }
 
