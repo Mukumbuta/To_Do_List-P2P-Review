@@ -1,4 +1,3 @@
-// import _ from 'lodash';
 import './style.css';
 import {
   add, handleUI, remove,
@@ -9,12 +8,9 @@ import List from './modules/constructor.js';
 handleUI();
 add();
 
-// Handle DOM events
-// Add task to list
 const enterTodo = document.getElementById('enter-todo');
 enterTodo.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    // e.preventDefault();
     const description = document.getElementById('enter-todo').value;
     const complete = false;
     const todoList = getLocalStorage();
@@ -33,7 +29,6 @@ enterTodo.addEventListener('keypress', (e) => {
   }
 });
 
-// Remove task from list
 const removeBtn = document.querySelectorAll('.remove');
 removeBtn.forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -44,8 +39,6 @@ removeBtn.forEach((btn) => {
   });
 });
 
-// Store checked status in localStorage
-/* eslint-disable no-plusplus */
 const boxes = document.getElementsByClassName('entertodo').length;
 export default function statusManager(id) {
   for (let i = 1; i <= boxes; i++) {
@@ -60,7 +53,6 @@ export default function statusManager(id) {
   }
 }
 
-// Render checkbox status to UI
 for (let i = 1; i <= boxes; i++) {
   const getTodos = getLocalStorage().localTodos;
   if (getTodos[i - 1].complete === true) {
@@ -69,7 +61,6 @@ for (let i = 1; i <= boxes; i++) {
   }
 }
 
-// Listens to changes on the Checkboxes
 window.addEventListener('change', (e) => {
   const { id } = e.target;
   const targetElement = e.target;
@@ -79,7 +70,6 @@ window.addEventListener('change', (e) => {
   statusManager(id);
 });
 
-// Clear everything from the  on refresh icon click
 const ul = document.getElementById('to-do-container');
 const refresh = document.getElementById('refreshIcon');
 refresh.addEventListener('click', () => {
@@ -88,12 +78,11 @@ refresh.addEventListener('click', () => {
   window.location.reload();
 });
 
-// Delete all completed tasks
 const deleteAllChecked = document.getElementById('complete');
 deleteAllChecked.addEventListener('click', () => {
   const getTasks = getLocalStorage().localTodos;
   let incompleteTodos = getTasks.filter((task) => task.complete !== true);
-  // reset the indices of the remaining tasks after deletion
+  
   incompleteTodos = incompleteTodos.map((task, index) => {
     const result = {
       ...task,
@@ -105,7 +94,6 @@ deleteAllChecked.addEventListener('click', () => {
   window.location.reload();
 });
 
-// Event: Edit To Do Item
 const editBtn = document.querySelectorAll('.edit');
 editBtn.forEach((btn) => {
   btn.addEventListener('click', (e) => {
