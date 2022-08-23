@@ -42,7 +42,9 @@ These were linter tests mainly
 - Html, run `npx stylelint "**/*.{css,scss}"`
 - Javascript `npx eslint .`
 
-
+## Deployment
+- View the live version of my project on GitHub Pages
+- Link: https://mukumbuta.github.io/To_Do_List-P2P-Review/
 
 
 ## Authors
